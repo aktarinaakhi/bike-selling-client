@@ -1,10 +1,13 @@
 import React from 'react';
+import DashboardHome from '../DashboardHome/DashboardHome';
 
 const Pay = () => {
     return (
-        <div>
+        <DashboardHome>
             <h1>Payment system coming soon</h1>
-        </div>
+
+        </DashboardHome>
+
     );
 };
 
