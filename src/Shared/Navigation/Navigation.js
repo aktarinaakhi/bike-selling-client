@@ -20,7 +20,7 @@ const Header = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto">
                         <Nav.Link className="text-light" as={Link} to="/home#home">Home</Nav.Link>
-                        <Nav.Link className="text-light" as={HashLink} to="/home#products">Products</Nav.Link>
+                        <Nav.Link className="text-light" as={Link} to="/allProducts">Products</Nav.Link>
                         <Nav.Link className="text-light" as={Link} to="/about">About us</Nav.Link>
                         <Nav.Link className="text-light" as={Link} to="/contact">Contact</Nav.Link>
                     </Nav>
@@ -29,7 +29,6 @@ const Header = () => {
 
                 <Navbar.Collapse className="justify-content-end">
                     <Nav>
-                        <Nav.Link className="text-light" as={Link} to="/dashboard">Dashboard</Nav.Link>
 
                         {
                             !user.email ?
@@ -43,6 +42,8 @@ const Header = () => {
                                 </Nav.Link>
                                 :
                                 <div className="d-flex align-items-center justify-content-center">
+                                    <Nav.Link className="text-light" as={Link} to="/dashboard">Dashboard</Nav.Link>
+
                                     <button className="mx-3 btn btn-primary" onClick={() => logOut()}>logout</button>
                                     <p className="text-light mt-2">{user.displayName}</p>
                                 </div>

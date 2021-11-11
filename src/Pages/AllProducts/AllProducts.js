@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Footer from '../../Shared/Footer/Footer';
+import Navigation from '../../Shared/Navigation/Navigation'
 
-const Products = () => {
+const AllProducts = () => {
     const [products, setProducts] = useState([]);
     const [spinner, setSpinner] = useState(true);
 
@@ -22,17 +24,19 @@ const Products = () => {
     }
     return (
         <>
+            <Navigation></Navigation>
             <div id="services" className="container my-5">
 
-                <div className="w-50 text-center mx-auto mb-5">
-                    <h2 className="mt-5 text-center">Our Top collections</h2>
+                <div className="w-50 text-center mx-auto">
+                    <h2 className="mt-5 text-center">Our collections</h2>
+                    <input className="mx-4 py-3 my-5 px-2 aligns-item-center" type="text" placeholder="Search your Destination" />
                 </div>
                 <div className="row g-4">
                     {
                         spinner && <Spinner className="mx-auto" animation="border" variant="dark" />
                     }
                     {
-                        products.slice(0, 6).map(product => <div className="col-sm-4 text-center">
+                        products.map(product => <div className="col-sm-4 text-center">
                             <div className="card">
                                 <div className="card-body">
                                     <div><img className="card-image" style={style} src={product.image} alt="" /></div>
@@ -48,17 +52,13 @@ const Products = () => {
                     }
 
                 </div>
-                <Link to="allProducts">
-                    <div className="mt-4 text-center">
-                        <button className="btn btn-danger mt-3">See all products</button>
-                    </div>
-                </Link>
-
             </div>
 
+            <Footer></Footer>
 
         </>
+
     );
 };
 
-export default Products;
+export default AllProducts;

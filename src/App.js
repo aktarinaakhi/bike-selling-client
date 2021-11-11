@@ -1,6 +1,9 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
 import AuthProvider from './context/AuthProvider';
+import PrivateRoute from './context/PrivateRoute';
+import AdminRoute from './context/AdminRoute';
+import AllProducts from './Pages/AllProducts/AllProducts';
 import DashboardHome from './Pages/Dashboard/DashboardHome/DashboardHome';
 import AddProducts from './Pages/Dashboard/dashboardPages/AddProducts';
 import MakeAdmin from './Pages/Dashboard/dashboardPages/MakeAdmin';
@@ -12,6 +15,7 @@ import Review from './Pages/Dashboard/dashboardPages/Review';
 import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
 import NotFound from './Pages/NotFound';
+import Purchase from './Pages/Purchase/Purchase';
 
 
 function App() {
@@ -28,49 +32,50 @@ function App() {
             <Home></Home>
           </Route>
 
-          <Route exact path="/dashboard">
-            <DashboardHome></DashboardHome>
+          <Route exact path="/allProducts">
+            <AllProducts></AllProducts>
           </Route>
 
-          <Route exact path="/myOrders">
+          <PrivateRoute exact path="/dashboard">
+            <DashboardHome></DashboardHome>
+          </PrivateRoute>
+
+          <PrivateRoute exact path="/myOrders">
             <Myorders></Myorders>
-          </Route>
+          </PrivateRoute>
+
+          <PrivateRoute exact path="/purchase/:productId">
+            <Purchase></Purchase>
+          </PrivateRoute>
 
           {/* <Route exact path="/contact">
             <Contact></Contact>
           </Route> */}
 
-          {/* <PrivateRoute exact path="/placeorder/:serviceId">
-            <PlaceOrder></PlaceOrder>
-          </PrivateRoute> */}
 
-          <Route exact path="/myOrders">
-            <Myorders></Myorders>
-          </Route>
-
-          <Route exact path="/review">
+          <PrivateRoute exact path="/review">
             <Review></Review>
-          </Route>
+          </PrivateRoute>
 
-          <Route exact path="/pay">
+          <PrivateRoute exact path="/pay">
             <Pay></Pay>
-          </Route>
+          </PrivateRoute>
 
-          <Route exact path="/manageOrders">
+          <AdminRoute exact path="/manageOrders">
             <ManageAllOrders></ManageAllOrders>
-          </Route>
+          </AdminRoute>
 
-          <Route exact path="/addProducts">
+          <AdminRoute exact path="/addProducts">
             <AddProducts></AddProducts>
-          </Route>
+          </AdminRoute>
 
-          <Route exact path="/manageProducts">
+          <AdminRoute exact path="/manageProducts">
             <ManageProducts></ManageProducts>
-          </Route>
+          </AdminRoute>
 
-          <Route exact path="/admin">
+          <AdminRoute exact path="/admin">
             <MakeAdmin></MakeAdmin>
-          </Route>
+          </AdminRoute>
 
           <Route exact path="/login">
             <Login></Login>
