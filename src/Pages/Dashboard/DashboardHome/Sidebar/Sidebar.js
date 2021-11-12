@@ -9,7 +9,7 @@ const Sidebar = () => {
             <ul className='list-group sticky-top  py-2'>
 
                 <Nav.Link className='list-group-item' as={Link} to="/myOrders">My Orders</Nav.Link>
-                <Nav.Link className='list-group-item' as={Link} to="/review">Review</Nav.Link>
+                <Nav.Link className='list-group-item' as={Link} to="/review">Add Review</Nav.Link>
                 <Nav.Link className='list-group-item' as={Link} to="/pay">Pay</Nav.Link>
                 <Nav.Link className='list-group-item' as={Link} to="/manageOrders">Manage All Orders</Nav.Link>
                 <Nav.Link className='list-group-item' as={Link} to="/addProducts">Add a Products</Nav.Link>

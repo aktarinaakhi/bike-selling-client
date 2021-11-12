@@ -16,6 +16,7 @@ import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
 import NotFound from './Pages/NotFound';
 import Purchase from './Pages/Purchase/Purchase';
+import Register from './Pages/Login/Register/Register';
 
 
 function App() {
@@ -79,6 +80,9 @@ function App() {
 
           <Route exact path="/login">
             <Login></Login>
+          </Route>
+          <Route exact path="/register">
+            <Register></Register>
           </Route>
 
           <Route exact path="*">
