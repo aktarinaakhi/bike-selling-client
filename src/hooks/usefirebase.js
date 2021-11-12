@@ -18,6 +18,7 @@ const useFirebase = () => {
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
 
+    // google sign in
     const signInWithGoogle = (location, history) => {
         setIsLoading(true);
         signInWithPopup(auth, googleProvider)
@@ -34,9 +35,10 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     }
 
+    //common method function
     const saveUser = (email, displayName, method) => {
         const user = { email, displayName };
-        fetch('http://localhost:5000/users', {
+        fetch('https://immense-scrubland-21302.herokuapp.com/users', {
             method: method,
             headers: {
                 'content-type': 'application/json'
@@ -53,9 +55,7 @@ const useFirebase = () => {
                 setError('');
                 const newUser = { email, displayName: name };
                 setUser(newUser);
-                // save user to the database
                 saveUser(email, name, 'POST');
-                // send name to firebase after creation
                 updateProfile(auth.currentUser, {
                     displayName: name
                 }).then(() => {
@@ -84,6 +84,7 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     }
 
+    //for user
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
@@ -97,14 +98,13 @@ const useFirebase = () => {
         return () => unsubscribe();
     }, [auth])
 
-
+    // for admin
     useEffect(() => {
         fetch(`http://localhost:5000/users/${user.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
+
     }, [user.email])
-
-
 
 
     const logOut = () => {
@@ -118,11 +118,12 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     };
 
-    useEffect(() => {
-        fetch(`http://localhost:5000/users/${user.email}`)
-            .then(res => res.json())
-            .then(data => setAdmin(data.admin))
-    }, [user.email])
+
+    // useEffect(() => {
+    //     fetch(`https://immense-scrubland-21302.herokuapp.com/users/${user.email}`)
+    //         .then(res => res.json())
+    //         .then(data => setAdmin(data.admin))
+    // }, [user.email])
 
 
 
@@ -138,8 +139,7 @@ const useFirebase = () => {
             setError,
             registerUser,
             loginUser,
-            admin,
-            setAdmin
+            admin
 
         }
     );

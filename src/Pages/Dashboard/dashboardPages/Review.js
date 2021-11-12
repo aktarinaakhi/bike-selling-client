@@ -13,7 +13,7 @@ const Review = () => {
     const onSubmit = data => {
         data.name = user.displayName;
         data.img = user.photoURL;
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://immense-scrubland-21302.herokuapp.com/reviews', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

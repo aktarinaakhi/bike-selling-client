@@ -1,20 +1,27 @@
 import React from 'react';
 import { Col, Container, Nav, Navbar, Row } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
+import useAuth from '../../../../hooks/useAuth';
 
 const Sidebar = () => {
+    const { admin } = useAuth();
     return (
 
         <div className='col-md-3 col-sm-12'>
             <ul className='list-group sticky-top  py-2'>
 
-                <Nav.Link className='list-group-item' as={Link} to="/myOrders">My Orders</Nav.Link>
-                <Nav.Link className='list-group-item' as={Link} to="/review">Add Review</Nav.Link>
-                <Nav.Link className='list-group-item' as={Link} to="/pay">Pay</Nav.Link>
-                <Nav.Link className='list-group-item' as={Link} to="/manageOrders">Manage All Orders</Nav.Link>
-                <Nav.Link className='list-group-item' as={Link} to="/addProducts">Add a Products</Nav.Link>
-                <Nav.Link className='list-group-item' as={Link} to="/manageProducts">Manage Products</Nav.Link>
-                <Nav.Link className='list-group-item' as={Link} to="/admin">Make Admin</Nav.Link>
+                {!admin && <div>
+                    <Nav.Link className='list-group-item' as={Link} to="/myOrders">My Orders</Nav.Link>
+                    <Nav.Link className='list-group-item' as={Link} to="/review">Add Review</Nav.Link>
+                    <Nav.Link className='list-group-item' as={Link} to="/pay">Pay</Nav.Link>
+                </div>}
+
+                {admin && <div>
+                    <Nav.Link className='list-group-item' as={Link} to="/manageOrders">Manage All Orders</Nav.Link>
+                    <Nav.Link className='list-group-item' as={Link} to="/addProducts">Add a Products</Nav.Link>
+                    <Nav.Link className='list-group-item' as={Link} to="/manageProducts">Manage Products</Nav.Link>
+                    <Nav.Link className='list-group-item' as={Link} to="/admin">Make Admin</Nav.Link>
+                </div>}
             </ul>
         </div>
 
