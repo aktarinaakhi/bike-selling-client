@@ -1,14 +1,15 @@
 import axios from 'axios';
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import DashboardHome from '../DashboardHome/DashboardHome';
 
 const MakeAdmin = () => {
+    const [email, setEmail] = useState('');
     const { register, reset, handleSubmit, formState: { errors } } = useForm();
 
 
     const onSubmit = data => {
-        axios.post('https://obscure-plains-37105.herokuapp.com/admin', data)
+        axios.post('http://localhost:5000/', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Admin inserted Successfully');
