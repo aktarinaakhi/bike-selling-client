@@ -58,7 +58,7 @@ const Purchase = () => {
                     </div>
                     <div className="col-md-4 ps-4">
                         <div className="card-body">
-                            <h5 className="card-title">{singleService?.product_name}</h5>
+                            <h5 className="card-title">{singleService?.name}</h5>
                             <p className="card-text">{singleService?.descriptoin}</p>
                             <p className="card-text"><small className="text-muted">Price : BDT <strong>{singleService?.price}</strong></small></p>
                         </div>

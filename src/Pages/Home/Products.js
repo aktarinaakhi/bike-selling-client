@@ -36,7 +36,7 @@ const Products = () => {
                             <div className="card">
                                 <div className="card-body">
                                     <div><img className="card-image" style={style} src={product.image} alt="" /></div>
-                                    <h5 className="card-title mt-3"> Name : {product.product_name}</h5>
+                                    <h5 className="card-title mt-3"> {product.name}</h5>
                                     <p className="card-text">{product.descriptoin}</p>
                                     <p>BDT {product.price}</p>
                                     <Link to={`/purchase/${product._id}`}>
@@ -50,7 +50,7 @@ const Products = () => {
                 </div>
                 <Link to="allProducts">
                     <div className="mt-4 text-center">
-                        <button className="btn btn-danger mt-3">See all products</button>
+                        <button className="btn btn-danger mt-3">Load More products</button>
                     </div>
                 </Link>
 

@@ -23,7 +23,7 @@ const AddProducts = () => {
                 <h3 style={{ color: '#020f24', fontWeight: 'bold' }} className='mb-5 text-center'>Add New Products</h3>
                 <form onSubmit={handleSubmit(onSubmit)} style={{ textAlign: 'center' }}>
 
-                    <input style={{ padding: '5px', width: '70%' }} name="prodcut_name" placeholder="product name" {...register("prodcut_name")} className="my-1" />
+                    <input style={{ padding: '5px', width: '70%' }} name="name" placeholder="product name" {...register("name")} className="my-1" />
                     <br />
                     <input style={{ padding: '5px', width: '70%' }} name="descriptoin" placeholder="descriptoin" {...register("descriptoin")} className="my-1" />
                     <br />

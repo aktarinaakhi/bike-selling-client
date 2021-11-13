@@ -1,14 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { HashLink } from 'react-router-hash-link';
 import useAuth from '../../hooks/useAuth';
-const Header = () => {
+const Navigation = () => {
     const { user, logOut } = useAuth();
 
     return (
 
-        <Navbar collapseOnSelect expand="lg" style={{ backgroundColor: '#607D8B' }} sticky="top">
+        <Navbar collapseOnSelect expand="lg" style={{ backgroundColor: '#E31837' }} sticky="top">
             <Container>
 
                 <Navbar.Brand as={Link} to="/home">
@@ -19,10 +17,10 @@ const Header = () => {
 
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto">
-                        <Nav.Link className="text-light" as={Link} to="/home#home">Home</Nav.Link>
+                        <Nav.Link className="text-light" as={Link} to="/home">Home</Nav.Link>
                         <Nav.Link className="text-light" as={Link} to="/allProducts">Explore</Nav.Link>
-                        <Nav.Link className="text-light" as={Link} to="/about">About us</Nav.Link>
-                        <Nav.Link className="text-light" as={Link} to="/contact">Contact</Nav.Link>
+                        {/* <Nav.Link className="text-light" as={Link} to="/about">About us</Nav.Link>
+                        <Nav.Link className="text-light" as={Link} to="/contact">Contact</Nav.Link> */}
                     </Nav>
                 </Navbar.Collapse>
 
@@ -37,10 +35,6 @@ const Header = () => {
                                     <Nav.Link className="text-light" as={Link} to="/register">Register</Nav.Link>
 
                                 </div>
-
-
-
-
                                 :
                                 <div className="d-flex align-items-center justify-content-center">
                                     <Nav.Link className="text-light" as={Link} to="/dashboard">Dashboard</Nav.Link>
@@ -56,4 +50,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default Navigation;

@@ -25,11 +25,11 @@ const AllProducts = () => {
     return (
         <>
             <Navigation></Navigation>
-            <div id="services" className="container my-5">
+            <div id="products" className="container my-5">
 
                 <div className="w-50 text-center mx-auto">
                     <h2 className="mt-5 text-center">Our collections</h2>
-                    <input className="mx-4 py-3 my-5 px-2 aligns-item-center" type="text" placeholder="Search your Destination" />
+                    <input className=" w-75 mx-4 py-2 my-3 px-2 aligns-item-center" type="text" placeholder="Search product" />
                 </div>
                 <div className="row g-4">
                     {
@@ -40,7 +40,7 @@ const AllProducts = () => {
                             <div className="card">
                                 <div className="card-body">
                                     <div><img className="card-image" style={style} src={product.image} alt="" /></div>
-                                    <h5 className="card-title mt-3"> Name : {product.product_name}</h5>
+                                    <h5 className="card-title mt-3">{product.name}</h5>
                                     <p className="card-text">{product.descriptoin}</p>
                                     <p>BDT {product.price}</p>
                                     <Link to={`/purchase/${product._id}`}>

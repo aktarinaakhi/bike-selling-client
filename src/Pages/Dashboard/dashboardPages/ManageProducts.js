@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Modal, Spinner, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import DashboardHome from '../DashboardHome/DashboardHome';
 
 const ManageProducts = () => {
@@ -60,7 +59,7 @@ const ManageProducts = () => {
                             <div className="card">
                                 <div className="card-body">
                                     <div><img className="card-image" style={style} src={product.image} alt="" /></div>
-                                    <h5 className="card-title mt-3"> Name : {product.product_name}</h5>
+                                    <h5 className="card-title mt-3">  {product.name}</h5>
                                     <p className="card-text">{product.descriptoin}</p>
                                     <p>BDT {product.price}</p>
 

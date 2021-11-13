@@ -14,8 +14,6 @@ const Testimonials = () => {
             })
     }, [])
 
-    const count = 0;
-
     return (
         <div style={{ backgroundColor: 'whitesmoke' }} className='py-5'>
             <h1 className='text-center pt-5' style={{ fontWeight: 'bold', color: '#020f24' }}>Reviews</h1>
