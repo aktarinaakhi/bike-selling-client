@@ -8,7 +8,7 @@ import Navigation from '../../../Shared/Navigation/Navigation'
 
 const Register = () => {
     const [loginData, setLoginData] = useState({});
-    const { user, registerUser, isLoading, error } = useAuth();
+    const { user, registerUser, isLoading, error, signInWithGoogle } = useAuth();
     const history = useHistory();
 
 
@@ -71,7 +71,7 @@ const Register = () => {
 
                     <input
                         className="mb-3"
-                        style={{ width: '20%', backgroundColor: 'blue', border: 'none', padding: '10px', borderRadius: '5px', color: 'white' }}
+                        style={{ width: '20%', backgroundColor: 'black', border: 'none', padding: '10px', borderRadius: '5px', color: 'white' }}
                         type="submit" />
                 </form>
                 <NavLink to="/login">
@@ -81,6 +81,11 @@ const Register = () => {
                 {isLoading && <Spinner animation="border" />}
                 {user?.email && <Alert variant="success"> User Created successfully!</Alert>}
                 {error && <Alert variant="danger">{error}</Alert>}
+
+            </div>
+
+            <div className="text-center my-5 py-5">
+                <button onClick={signInWithGoogle} className="bg-secondary mx-auto text-white py-2 px-4"><i className="bi bi-google me-4"></i>Continue with Google</button>
 
             </div>
 

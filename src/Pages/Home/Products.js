@@ -25,7 +25,7 @@ const Products = () => {
             <div id="services" className="container my-5">
 
                 <div className="w-50 text-center mx-auto mb-5">
-                    <h2 className="mt-5 text-center">Our Top collections</h2>
+                    <h2 className="mt-5 text-center">Top Collections</h2>
                 </div>
                 <div className="row g-4">
                     {

@@ -11,7 +11,6 @@ const Login = () => {
     const { user, loginUser, signInWithGoogle, isLoading, error } = useAuth();
     const history = useHistory();
     const location = useLocation();
-    // const redirect_url = location.state?.from || '/home'
 
     const handleOnChange = e => {
         const field = e.target.name;
@@ -24,22 +23,6 @@ const Login = () => {
         loginUser(loginData.email, loginData.password, location, history);
         e.preventDefault();
     }
-
-
-
-
-    // const googleSignIn = () => {
-    //     handleGoogleSignIn()
-    //         .then(result => {
-    //             setIsLoading(true);
-    //             history.push(redirect_url);
-    //         })
-    //         .finally(() => {
-    //             setIsLoading(false);
-    //         })
-
-
-    // };
 
 
     return (
@@ -69,7 +52,7 @@ const Login = () => {
 
                     <input
                         className="mb-3"
-                        style={{ width: '20%', backgroundColor: 'blue', border: 'none', padding: '10px', borderRadius: '5px', color: 'white' }}
+                        style={{ width: '20%', backgroundColor: 'black', border: 'none', padding: '10px', borderRadius: '5px', color: 'white' }}
                         type="submit" />
                 </form>
                 <NavLink to="/register">

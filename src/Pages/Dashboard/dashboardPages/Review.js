@@ -43,7 +43,7 @@ const Review = () => {
                     <input name='reviewDescription' placeholder='Description' {...register("reviewDescription", { required: true })} style={{ height: '6vw', padding: '5px', marginBottom: '20px', marginLeft: '28px', width: '50%' }} /> <br />
                     {errors.reviewDescription && <span>This field is required</span>}
 
-                    <input type="submit" style={{ backgroundColor: 'blue', padding: '10px', color: 'white', border: 'none', width: '30%', borderRadius: '5px' }} />
+                    <input type="submit" style={{ backgroundColor: 'black', padding: '10px', color: 'white', border: 'none', width: '30%', borderRadius: '5px' }} />
                 </form>
             </div>
         </DashboardHome>
