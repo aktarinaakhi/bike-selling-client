@@ -38,7 +38,7 @@ const ManageAllOrders = () => {
 
     const handleUpdateStatus = id => {
         const update = {
-            status: 'Accepted'
+            status: 'Shipped'
         }
         const url = `https://immense-scrubland-21302.herokuapp.com/orders/${id}`;
         fetch(url, {
@@ -81,7 +81,7 @@ const ManageAllOrders = () => {
                                     <td>{list.status}</td>
                                     <td>
                                         <button className=" btn btn-danger" onClick={() => modalShow(list._id)}>Cancel</button>
-                                        <button onClick={() => handleUpdateStatus(list._id)} className="btn btn-success ms-4"> Accept</button>
+                                        <button onClick={() => handleUpdateStatus(list._id)} className="btn btn-success ms-4"> Shipped</button>
                                     </td>
 
                                     <Modal show={show} onHide={handleClose}>

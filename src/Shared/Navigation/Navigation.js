@@ -19,8 +19,7 @@ const Navigation = () => {
                     <Nav className="ml-auto">
                         <Nav.Link className="text-light" as={Link} to="/home">Home</Nav.Link>
                         <Nav.Link className="text-light" as={Link} to="/allProducts">Explore</Nav.Link>
-                        {/* <Nav.Link className="text-light" as={Link} to="/about">About us</Nav.Link>
-                        <Nav.Link className="text-light" as={Link} to="/contact">Contact</Nav.Link> */}
+                        
                     </Nav>
                 </Navbar.Collapse>
 

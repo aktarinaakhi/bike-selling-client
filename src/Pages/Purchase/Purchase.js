@@ -41,7 +41,7 @@ const Purchase = () => {
             .then(res => {
                 if (res) {
                     setOrders([]);
-                    alert('booking Successfully');
+                    alert('Order Successfully');
                     reset();
                 }
             })
@@ -73,7 +73,7 @@ const Purchase = () => {
                             {errors.Address && <span>Address is required </span>}
                             <input placeholder="phone number" defaultValue="" {...register("Phone", { required: true })} required /> <br />
 
-                            <input value="Confirm Booking" type="submit"></input>
+                            <input value="Confirm Order" type="submit"></input>
                         </form>
                     </div>
                 </div>

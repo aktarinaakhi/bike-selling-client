@@ -16,7 +16,7 @@ const bike = () => {
                         style={{ height: '40vw' }}
                     />
                     <Carousel.Caption>
-                        <h2>Happy Journey</h2>
+                        <h2>Have save, have fun</h2>
                         <p> work to the highest standards to guarantee your privacy. For further details</p>
                     </Carousel.Caption>
                 </Carousel.Item>
