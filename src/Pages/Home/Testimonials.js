@@ -26,7 +26,10 @@ const Testimonials = () => {
                             <div className=''  >
 
                                 <div className='d-flex justify-content-center flex-wrap m-5' >
-                                    <Testimonial img={review.img} name={review.name} description={review.reviewDescription} rating={review.reviewRating} profession={review.profession} />
+                                    <Testimonial
+                                        key={review._id}
+                                        review={review}
+                                    />
                                 </div>
                             </div>
                         </Carousel.Item>

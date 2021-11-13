@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut, createUserWithEmailAndPassword, updateProfile, signInWithEmailAndPassword } from "firebase/auth";
 import initializeAuthentication from '../firebase/firebase.init';
-import { useHistory, useLocation } from 'react-router';
+// import { useHistory, useLocation } from 'react-router';
 
 initializeAuthentication();
 
@@ -74,7 +74,7 @@ const useFirebase = () => {
         setIsLoading(true);
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                const destination = location?.state?.from || '/';
+                const destination = location?.state?.from || '/dashboard';
                 history.replace(destination);
                 setError('');
             })
