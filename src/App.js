@@ -49,11 +49,6 @@ function App() {
             <Purchase></Purchase>
           </PrivateRoute>
 
-          {/* <Route exact path="/contact">
-            <Contact></Contact>
-          </Route> */}
-
-
           <PrivateRoute exact path="/review">
             <Review></Review>
           </PrivateRoute>

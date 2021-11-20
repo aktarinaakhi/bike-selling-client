@@ -1,6 +1,6 @@
 import React from 'react';
-import { Col, Container, Nav, Navbar, Row } from 'react-bootstrap';
-import { Link, NavLink } from 'react-router-dom';
+import { Nav } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import useAuth from '../../../../hooks/useAuth';
 
 const Sidebar = () => {
@@ -17,8 +17,6 @@ const Sidebar = () => {
 
                     <button style={{ width: '100%', textAlign: 'left' }} className="list-group-item" onClick={() => logOut()}>Logout</button>
 
-
-
                 </div>}
 
                 {admin && <div>
@@ -33,33 +31,6 @@ const Sidebar = () => {
             </ul>
         </div>
 
-
-
-
-
-
-
-
-
-
-        // <Container className="bg-green">
-        //     <Row>
-        //         {/* <Col sm={8}>sm=8</Col> */}
-        //         <Col sm={12} md={4}>
-        //             <Navbar.Collapse className="justify-content-end">
-        //                 <Nav>
-
-        //                     <Nav.Link as={Link} to="/myBooking">My Booking</Nav.Link>
-        //                     <Nav.Link as={Link} to="/bookingList">Manage booking list</Nav.Link>
-        //                     <Nav.Link as={Link} to="/addService">Add new service</Nav.Link>
-        //                     <Nav.Link as={Link} to="/admin">Admin Added</Nav.Link>
-
-
-        //                 </Nav>
-        //             </Navbar.Collapse>
-        //         </Col>
-        //     </Row>
-        // </Container>
     );
 };
 
